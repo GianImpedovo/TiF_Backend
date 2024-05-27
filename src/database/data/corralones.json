@@ -1,0 +1,830 @@
+[{
+    "proveedor": {
+      "nombre": "Corralón Premium",
+      "ubicaciones": [
+        {
+          "direccion": "Av. Brasil 916, Constitución, CABA",
+          "telefono": "011 4361-7673",
+          "email": "info@corralonpremium.com.ar"
+        },
+        {
+          "direccion": "Av. José María Moreno 487, Caballito, CABA",
+          "telefono": "011 4903-9666",
+          "email": "info@corralonpremium.com.ar"
+        }
+      ],
+      "tiempo_entrega_dias": 4
+    },
+    "materiales": [
+      {
+        "categoria": "Cal",
+        "productos": [
+          {
+            "nombre": "Cal El Milagro",
+            "marca": "El Milagro",
+            "color": "Blanco",
+            "material": "Cal",
+            "stock": 100,
+            "precio_por_unidad": 50,
+            "unidad": "1 Kg",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Pegamentos",
+        "productos": [
+          {
+            "nombre": "Pegamento WEBER Gris",
+            "marca": "Weber",
+            "color": "Gris",
+            "material": "Cemento",
+            "stock": 80,
+            "precio_por_unidad": 200,
+            "unidad": "30 Kg",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Klaukol Blanco",
+            "marca": "Klaukol",
+            "color": "Blanco",
+            "material": "Cemento",
+            "stock": 50,
+            "precio_por_unidad": 220,
+            "unidad": "30 Kg",
+            "costo_envio": 180,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Klaukol Impermeabilizante",
+            "marca": "Klaukol",
+            "color": "Blanco",
+            "material": "Cemento",
+            "stock": 60,
+            "precio_por_unidad": 250,
+            "unidad": "30 Kg",
+            "costo_envio": 200,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Revestimientos",
+        "productos": [
+          {
+            "nombre": "Ceresita",
+            "marca": "N/A",
+            "color": "Blanco",
+            "material": "Cal",
+            "stock": 70,
+            "precio_por_unidad": 70,
+            "unidad": "1 Kg",
+            "costo_envio": 90,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Yesos",
+        "productos": [
+          {
+            "nombre": "Yeso Tuyango",
+            "marca": "Tuyango",
+            "color": "Blanco",
+            "material": "Yeso",
+            "stock": 90,
+            "precio_por_unidad": 80,
+            "unidad": "1 Kg",
+            "costo_envio": 110,
+            "tiempo_entrega_dias": 2
+          }
+        ]
+      },
+      {
+        "categoria": "Membranas",
+        "productos": [
+          {
+            "nombre": "Membrana Emapi",
+            "marca": "Emapi",
+            "color": "Negro",
+            "material": "Asfalto",
+            "stock": 40,
+            "precio_por_unidad": 500,
+            "unidad": "35 Kg",
+            "costo_envio": 250,
+            "tiempo_entrega_dias": 4
+          }
+        ]
+      },
+      {
+        "categoria": "Construcción en seco",
+        "productos": [
+          {
+            "nombre": "Placa de Yeso Durlock",
+            "marca": "Durlock",
+            "color": "Blanco",
+            "material": "Yeso",
+            "stock": 150,
+            "precio_por_unidad": 300,
+            "unidad": "unidad",
+            "costo_envio": 200,
+            "tiempo_entrega_dias": 3
+          },
+          {
+            "nombre": "Perfil C para Durlock",
+            "marca": "N/A",
+            "color": "Gris",
+            "material": "Acero",
+            "stock": 200,
+            "precio_por_unidad": 100,
+            "unidad": "unidad",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 2
+          }
+        ]
+      },
+      {
+        "categoria": "Ferretería",
+        "productos": [
+          {
+            "nombre": "Clavos",
+            "marca": "N/A",
+            "color": "Metálico",
+            "material": "Acero",
+            "stock": 500,
+            "precio_por_unidad": 5,
+            "unidad": "unidad",
+            "costo_envio": 50,
+            "tiempo_entrega_dias": 1
+          },
+          {
+            "nombre": "Alambre de Fardo",
+            "marca": "N/A",
+            "color": "Metálico",
+            "material": "Acero",
+            "stock": 300,
+            "precio_por_unidad": 80,
+            "unidad": "rollo",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Electrodos",
+            "marca": "N/A",
+            "color": "Metálico",
+            "material": "Acero",
+            "stock": 200,
+            "precio_por_unidad": 150,
+            "unidad": "caja",
+            "costo_envio": 120,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Disco de Corte para Metal Tyrolit",
+            "marca": "Tyrolit",
+            "color": "Negro",
+            "material": "Carburo de Silicio",
+            "stock": 100,
+            "precio_por_unidad": 50,
+            "unidad": "unidad",
+            "costo_envio": 80,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Disco de Corte Diamantado Alifor",
+            "marca": "Alifor",
+            "color": "Plateado",
+            "material": "Diamante",
+            "stock": 80,
+            "precio_por_unidad": 200,
+            "unidad": "unidad",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "proveedor": {
+      "nombre": "Materiales El Triunfo",
+      "ubicaciones": [
+        {
+          "direccion": "Av. Fondo de la Legua 599, Boulogne",
+          "telefono": "4766-8950",
+          "email": "info@materialeseltriunfo.com.ar"
+        }
+      ],
+      "tiempo_entrega_dias": 5
+    },
+    "materiales": [
+      {
+        "categoria": "Áridos",
+        "productos": [
+          {
+            "nombre": "Cascote, Bolsón",
+            "marca": "El Triunfo",
+            "color": "Gris",
+            "material": "Cascote",
+            "stock": 100,
+            "precio_por_unidad": 250,
+            "unidad": "Bolsón",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Piedra Binder 6/12, Bolsón",
+            "marca": "El Triunfo",
+            "color": "Gris",
+            "material": "Piedra",
+            "stock": 80,
+            "precio_por_unidad": 400,
+            "unidad": "Bolsón",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 3
+          },
+          {
+            "nombre": "Piedra Partida 6/20, Bolsón",
+            "marca": "El Triunfo",
+            "color": "Blanco",
+            "material": "Piedra",
+            "stock": 120,
+            "precio_por_unidad": 350,
+            "unidad": "Bolsón",
+            "costo_envio": 130,
+            "tiempo_entrega_dias": 2
+          }
+        ]
+      },
+      {
+        "categoria": "Cañerías y Accesorios",
+        "productos": [
+          {
+            "nombre": "Caño PVC 110mm x 3m",
+            "marca": "Acuaplast",
+            "color": "Gris",
+            "material": "PVC",
+            "stock": 200,
+            "precio_por_unidad": 800,
+            "unidad": "Unidad",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Codo PVC 90° 110mm",
+            "marca": "Duratop",
+            "color": "Gris",
+            "material": "PVC",
+            "stock": 150,
+            "precio_por_unidad": 200,
+            "unidad": "Unidad",
+            "costo_envio": 50,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Unión doble hembra 110mm",
+            "marca": "Acuaplast",
+            "color": "Gris",
+            "material": "PVC",
+            "stock": 180,
+            "precio_por_unidad": 150,
+            "unidad": "Unidad",
+            "costo_envio": 50,
+            "tiempo_entrega_dias": 2
+          }
+        ]
+      },
+      {
+        "categoria": "Cementos y Cales",
+        "productos": [
+          {
+            "nombre": "Cemento Portland 50kg",
+            "marca": "Loma Negra",
+            "color": "Gris",
+            "material": "Cemento",
+            "stock": 500,
+            "precio_por_unidad": 500,
+            "unidad": "Bolsa",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 1
+          },
+          {
+            "nombre": "Cal Hidratada 25kg",
+            "marca": "El Milagro",
+            "color": "Blanco",
+            "material": "Cal",
+            "stock": 300,
+            "precio_por_unidad": 250,
+            "unidad": "Bolsa",
+            "costo_envio": 80,
+            "tiempo_entrega_dias": 1
+          },
+          {
+            "nombre": "Cemento de Albañilería",
+            "marca": "Holcim",
+            "color": "Gris",
+            "material": "Cemento",
+            "stock": 400,
+            "precio_por_unidad": 450,
+            "unidad": "Bolsa",
+            "costo_envio": 90,
+            "tiempo_entrega_dias": 1
+          }
+        ]
+      },
+      {
+        "categoria": "Hierros y mallas",
+        "productos": [
+          {
+            "nombre": "Hierro del 8",
+            "marca": "Acindar",
+            "color": "Negro",
+            "material": "Acero",
+            "stock": 1000,
+            "precio_por_unidad": 100,
+            "unidad": "Unidad",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 3
+          },
+          {
+            "nombre": "Hierro del 10",
+            "marca": "Acindar",
+            "color": "Negro",
+            "material": "Acero",
+            "stock": 800,
+            "precio_por_unidad": 150,
+            "unidad": "Unidad",
+            "costo_envio": 180,
+            "tiempo_entrega_dias": 3
+          },
+          {
+            "nombre": "Malla SIMA 15x15",
+            "marca": "Acindar",
+            "color": "Negro",
+            "material": "Acero",
+            "stock": 500,
+            "precio_por_unidad": 2000,
+            "unidad": "Unidad",
+            "costo_envio": 200,
+            "tiempo_entrega_dias": 4
+          }
+        ]
+      },
+      {
+        "categoria": "Ladrillos",
+        "productos": [
+          {
+            "nombre": "Ladrillo común",
+            "marca": "Cerámica Quilmes",
+            "color": "Rojo",
+            "material": "Arcilla",
+            "stock": 10000,
+            "precio_por_unidad": 20,
+            "unidad": "Unidad",
+            "costo_envio": 500,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Ladrillo hueco 12x18x33",
+            "marca": "Cerámica Quilmes",
+            "color": "Rojo",
+            "material": "Arcilla",
+            "stock": 8000,
+            "precio_por_unidad": 35,
+            "unidad": "Unidad",
+            "costo_envio": 600,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Ladrillo refractario",
+            "marca": "Cerámica Quilmes",
+            "color": "Amarillo",
+            "material": "Arcilla Refractaria",
+            "stock": 5000,
+            "precio_por_unidad": 50,
+            "unidad": "Unidad",
+            "costo_envio": 700,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "proveedor": {
+      "nombre": "Los PicaPiedras",
+      "ubicaciones": [
+        {
+          "direccion": "Avenida Fondo de la Legua 1343, Martinez",
+          "telefono": "+5411 4717-1099",
+          "email": "lospicapiedrasweb@gmail.com"
+        }
+      ],
+      "tiempo_entrega_dias": 5
+    },
+    "materiales": [
+      {
+        "categoria": "Lajas",
+        "productos": [
+          {
+            "nombre": "Laja San Luis",
+            "marca": "Laja SL",
+            "color": "Gris",
+            "material": "Piedra Natural",
+            "stock": 300,
+            "precio_por_unidad": 500,
+            "unidad": "m²",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 5
+          },
+          {
+            "nombre": "Laja San Juan",
+            "marca": "Laja SJ",
+            "color": "Marrón",
+            "material": "Piedra Natural",
+            "stock": 200,
+            "precio_por_unidad": 550,
+            "unidad": "m²",
+            "costo_envio": 160,
+            "tiempo_entrega_dias": 6
+          },
+          {
+            "nombre": "Laja Tandil",
+            "marca": "Laja TD",
+            "color": "Verde",
+            "material": "Piedra Natural",
+            "stock": 250,
+            "precio_por_unidad": 600,
+            "unidad": "m²",
+            "costo_envio": 170,
+            "tiempo_entrega_dias": 7
+          }
+        ]
+      },
+      {
+        "categoria": "Porfido",
+        "productos": [
+          {
+            "nombre": "Pórfido Patagónico",
+            "marca": "Pórfido P",
+            "color": "Rojo",
+            "material": "Piedra Natural",
+            "stock": 150,
+            "precio_por_unidad": 700,
+            "unidad": "m²",
+            "costo_envio": 200,
+            "tiempo_entrega_dias": 8
+          },
+          {
+            "nombre": "Pórfido Mendocino",
+            "marca": "Pórfido M",
+            "color": "Gris",
+            "material": "Piedra Natural",
+            "stock": 100,
+            "precio_por_unidad": 750,
+            "unidad": "m²",
+            "costo_envio": 210,
+            "tiempo_entrega_dias": 8
+          },
+          {
+            "nombre": "Pórfido Cordobés",
+            "marca": "Pórfido C",
+            "color": "Verde",
+            "material": "Piedra Natural",
+            "stock": 120,
+            "precio_por_unidad": 800,
+            "unidad": "m²",
+            "costo_envio": 220,
+            "tiempo_entrega_dias": 9
+          }
+        ]
+      },
+      {
+        "categoria": "Adoquines",
+        "productos": [
+          {
+            "nombre": "Adoquín Granítico",
+            "marca": "Adoquín G",
+            "color": "Gris",
+            "material": "Granito",
+            "stock": 500,
+            "precio_por_unidad": 50,
+            "unidad": "Unidad",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 5
+          },
+          {
+            "nombre": "Adoquín Basalto",
+            "marca": "Adoquín B",
+            "color": "Negro",
+            "material": "Basalto",
+            "stock": 400,
+            "precio_por_unidad": 55,
+            "unidad": "Unidad",
+            "costo_envio": 110,
+            "tiempo_entrega_dias": 6
+          },
+          {
+            "nombre": "Adoquín Pórfido",
+            "marca": "Adoquín P",
+            "color": "Rojo",
+            "material": "Pórfido",
+            "stock": 300,
+            "precio_por_unidad": 60,
+            "unidad": "Unidad",
+            "costo_envio": 120,
+            "tiempo_entrega_dias": 7
+          }
+        ]
+      },
+      {
+        "categoria": "Simil Piedra",
+        "productos": [
+          {
+            "nombre": "Simil Piedra Arenisca",
+            "marca": "Simil A",
+            "color": "Amarillo",
+            "material": "Cemento",
+            "stock": 600,
+            "precio_por_unidad": 80,
+            "unidad": "m²",
+            "costo_envio": 130,
+            "tiempo_entrega_dias": 5
+          },
+          {
+            "nombre": "Simil Piedra Caliza",
+            "marca": "Simil C",
+            "color": "Blanco",
+            "material": "Cemento",
+            "stock": 550,
+            "precio_por_unidad": 85,
+            "unidad": "m²",
+            "costo_envio": 140,
+            "tiempo_entrega_dias": 6
+          },
+          {
+            "nombre": "Simil Piedra Mármol",
+            "marca": "Simil M",
+            "color": "Beige",
+            "material": "Cemento",
+            "stock": 500,
+            "precio_por_unidad": 90,
+            "unidad": "m²",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 7
+          }
+        ]
+      },
+      {
+        "categoria": "Muretes",
+        "productos": [
+          {
+            "nombre": "Murete Rústico",
+            "marca": "Murete R",
+            "color": "Gris",
+            "material": "Piedra",
+            "stock": 200,
+            "precio_por_unidad": 300,
+            "unidad": "m²",
+            "costo_envio": 180,
+            "tiempo_entrega_dias": 5
+          },
+          {
+            "nombre": "Murete Travertino",
+            "marca": "Murete T",
+            "color": "Blanco",
+            "material": "Travertino",
+            "stock": 180,
+            "precio_por_unidad": 320,
+            "unidad": "m²",
+            "costo_envio": 190,
+            "tiempo_entrega_dias": 6
+          },
+          {
+            "nombre": "Murete Granítico",
+            "marca": "Murete G",
+            "color": "Rosa",
+            "material": "Granito",
+            "stock": 160,
+            "precio_por_unidad": 350,
+            "unidad": "m²",
+            "costo_envio": 200,
+            "tiempo_entrega_dias": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "proveedor": {
+      "nombre": "Materiales Yrigoyen",
+      "ubicaciones": [
+        {
+          "direccion": "Hipólito Yrigoyen 3090, Martínez",
+          "telefono": "(011) 4717-5522",
+          "email": "contacto1@materialesyrigoyen.com.ar"
+        },
+        {
+          "direccion": "Hipólito Yrigoyen 1540, Martínez",
+          "telefono": "(011) 4798-0440",
+          "email": "contacto2@materialesyrigoyen.com.ar"
+        }
+      ],
+      "tiempo_entrega_dias": 5
+    },
+    "materiales": [
+      {
+        "categoria": "Áridos",
+        "productos": [
+          {
+            "nombre": "Arena",
+            "marca": "Marca A",
+            "color": "Natural",
+            "material": "Sílice",
+            "stock": 50,
+            "precio_por_unidad": 150,
+            "unidad": "m3",
+            "costo_envio": 500,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Piedra Partida",
+            "marca": "Marca B",
+            "color": "Gris",
+            "material": "Granito",
+            "stock": 30,
+            "precio_por_unidad": 200,
+            "unidad": "m3",
+            "costo_envio": 600,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Pegamentos",
+        "productos": [
+          {
+            "nombre": "Klaukol Impermeable Potenciado x 30kg",
+            "marca": "Klaukol",
+            "color": "Gris",
+            "material": "Cemento",
+            "stock": 100,
+            "precio_por_unidad": 400,
+            "unidad": "bolsa 30 kg",
+            "costo_envio": 400,
+            "tiempo_entrega_dias": 4
+          },
+          {
+            "nombre": "Klaukol Plaka",
+            "marca": "Klaukol",
+            "color": "Gris",
+            "material": "Cemento",
+            "stock": 80,
+            "precio_por_unidad": 250,
+            "unidad": "bolsa 30 kg",
+            "costo_envio": 300,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Revestimientos",
+        "productos": [
+          {
+            "nombre": "Tarquini - Raya 2 Gris Kavanagh",
+            "marca": "Tarquini",
+            "color": "Gris Kavanagh",
+            "material": "Cemento",
+            "stock": 70,
+            "precio_por_unidad": 350,
+            "unidad": "saco 25 kg",
+            "costo_envio": 450,
+            "tiempo_entrega_dias": 3
+          },
+          {
+            "nombre": "Tarquini - Raya 2 Gris Tormenta",
+            "marca": "Tarquini",
+            "color": "Gris Tormenta",
+            "material": "Cemento",
+            "stock": 60,
+            "precio_por_unidad": 340,
+            "unidad": "saco 25 kg",
+            "costo_envio": 450,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Ladrillos",
+        "productos": [
+          {
+            "nombre": "Ladrillo Común",
+            "marca": "Marca E",
+            "color": "Rojo",
+            "material": "Arcilla",
+            "stock": 1000,
+            "precio_por_unidad": 10,
+            "unidad": "unidad",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 2
+          },
+          {
+            "nombre": "Ladrillo Hueco 12x18x33",
+            "marca": "Marca F",
+            "color": "Rojo",
+            "material": "Arcilla",
+            "stock": 800,
+            "precio_por_unidad": 15,
+            "unidad": "unidad",
+            "costo_envio": 120,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Hierros",
+        "productos": [
+          {
+            "nombre": "Hierro del 8",
+            "marca": "Marca G",
+            "color": "Gris",
+            "material": "Acero",
+            "stock": 500,
+            "precio_por_unidad": 100,
+            "unidad": "barra",
+            "costo_envio": 200,
+            "tiempo_entrega_dias": 4
+          },
+          {
+            "nombre": "Malla Sima 15x15",
+            "marca": "Marca H",
+            "color": "Gris",
+            "material": "Acero",
+            "stock": 300,
+            "precio_por_unidad": 300,
+            "unidad": "unidad",
+            "costo_envio": 250,
+            "tiempo_entrega_dias": 3
+          }
+        ]
+      },
+      {
+        "categoria": "Baldosones",
+        "productos": [
+          {
+            "nombre": "Baldosón Granítico 40x40",
+            "marca": "Marca I",
+            "color": "Gris",
+            "material": "Granito",
+            "stock": 200,
+            "precio_por_unidad": 50,
+            "unidad": "unidad",
+            "costo_envio": 150,
+            "tiempo_entrega_dias": 5
+          },
+          {
+            "nombre": "Baldosón Cementicio 50x50",
+            "marca": "Marca J",
+            "color": "Blanco",
+            "material": "Cemento",
+            "stock": 150,
+            "precio_por_unidad": 60,
+            "unidad": "unidad",
+            "costo_envio": 180,
+            "tiempo_entrega_dias": 4
+          }
+        ]
+      },
+      {
+        "categoria": "Tejas",
+        "productos": [
+          {
+            "nombre": "Teja Francesa",
+            "marca": "Marca K",
+            "color": "Rojo",
+            "material": "Cerámica",
+            "stock": 500,
+            "precio_por_unidad": 20,
+            "unidad": "unidad",
+            "costo_envio": 100,
+            "tiempo_entrega_dias": 3
+          },
+          {
+            "nombre": "Teja Colonial",
+            "marca": "Marca L",
+            "color": "Rojo",
+            "material": "Cerámica",
+            "stock": 600,
+            "precio_por_unidad": 25,
+            "unidad": "unidad",
+            "costo_envio": 120,
+            "tiempo_entrega_dias": 2
+          }
+        ]
+      }
+    ]
+  }
+]
+  
