@@ -31,3 +31,15 @@ import { getCorralones } from '../database/conecction.js';
 // Proveedor C (Los PicaPiedras): Tiene al menos dos de los materiales mencionados (ladrillo común y hierro del 8).
 // Proveedor D (Materiales Yrigoyen): No tiene ninguno de los materiales mencionados.
 
+export class ProyectoController {
+
+  static async obtenerPresupuestos(listaMateriales){
+    const data = await getCorralones();
+    let listaPresupuestos = Array()
+    for (let i = 0; i < array.length; i++) {
+      const element = array[i];
+      
+    }
+    return listaPresupuestos
+  }
+}
