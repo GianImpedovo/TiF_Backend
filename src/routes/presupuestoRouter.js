@@ -1,10 +1,13 @@
-import { Router } from "express";
-import { UserController } from "../controllers/user.js";
+const express = require('express');
+const presupuestoController = require('../controllers/presupuestoController.js')
 
-export const presupuestoRouter = Router()
 
-presupuestoRouter.get('/', UserController.getAll)
-presupuestoRouter.post('/', UserController.create)
-presupuestoRouter.get('/:id', UserController.getById)
-presupuestoRouter.put('/:id', UserController.update)
-presupuestoRouter.delete('/:id', UserController.delete)
+const router = express.Router();
+
+router.get('/', presupuestoController.getAllPresupuesto)
+// presupuestoRouter.post('/', PresupuestoController.create)
+// presupuestoRouter.get('/:id', PresupuestoController.getById)
+// presupuestoRouter.put('/:id', PresupuestoController.update)
+// presupuestoRouter.delete('/:id', PresupuestoController.delete)
+
+module.exports = router;

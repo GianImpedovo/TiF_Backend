@@ -1,13 +1,13 @@
 
 
 //Database connection --
-import bluebird from 'bluebird';
-import mongoose from 'mongoose';
+let bluebird = require('bluebird');
+let mongoose = require('mongoose')
 mongoose.Promise = bluebird;
-let dbUrl = "mongodb+srv://alejandrobiarrieta:X11oG2oeToFSUvkc@maincluster.tguohdu.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster"
+let dbUrl = "mongodb+srv://alejandrobiarrieta:X11oG2oeToFSUvkc@maincluster.tguohdu.mongodb.net/Construnet?retryWrites=true&w=majority&appName=MainCluster"
 console.log("BD", dbUrl);
 
-export default class MongooseConnection {
+class MongooseConnection {
     connect() {
         // Conectar a la base de datos
         mongoose.connect(dbUrl)
@@ -26,3 +26,4 @@ export default class MongooseConnection {
 }
 
 
+module.exports = MongooseConnection;

@@ -1,10 +1,7 @@
-const { Schema } = require('mongoose');
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema;
 
-// coleccion de presupuestos confirmados
-
-
-
-const presupuestosConfirmados = new Schema({
+const PresupuestoSchema = new Schema({
     NombreProveedor: String,
     reputacion: Number,
     tiempoEntrega: String,
@@ -19,5 +16,5 @@ const presupuestosConfirmados = new Schema({
     }]
 });
 
-const Presupuesto = mongoose.model('presupuestosConfirmados', ServicioSchema)
-module.exports = Servicio;
+const Presupuesto = mongoose.model('presupuestosConfirmados', PresupuestoSchema)
+module.exports = Presupuesto;

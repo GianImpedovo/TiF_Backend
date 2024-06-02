@@ -1,21 +1,25 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 
 
 app.use(express.json())
 
 // importo los routers
-import { presupuestoRouter } from './src/routes/presupuestoRouter'
+const presupuestoRouter = require('./src/routes/presupuestoRouter.js')
 
 // apli
 app.use("/presupuestos",presupuestoRouter)
+app.use("/",router.get('/', (req, res,next) => {
+    res.send('Bienvenido a la página de inicio');
+  }))
 
 //importo cookie parser
 let cookieParser = require('cookie-parser');
 app.use(cookieParser());
 
 //aplico cors
-import cors from 'cors'
+let cors = require('cors');
 app.use(cors());
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -25,7 +29,7 @@ app.use(function (req, res, next) {
 
 
 // creando instancia de coneccion a la base de datos
-import MongooseConnection from './src/database/mongooseConnection.js'
+const MongooseConnection = require('./src/database/mongooseConnection.js');
 let db = new MongooseConnection();
 db.connect()
 
@@ -36,5 +40,3 @@ const PORT = process.env.PORT ?? 3000
 app.listen(PORT, () => {
   console.log(`server listening on port http://localhost:${PORT}`)
 })
-
-export default app
