@@ -12,9 +12,10 @@ const PresupuestoSchema = new Schema({
         marca: String,
         categoria: String,
         cantidad: Number,
-        precio: Number
+        precio: Number,
+        calidad: Number,
     }]
 });
 
-const Presupuesto = mongoose.model('presupuestosConfirmados', PresupuestoSchema)
+const Presupuesto = mongoose.model('presupuestosconfirmados', PresupuestoSchema)
 module.exports = Presupuesto;

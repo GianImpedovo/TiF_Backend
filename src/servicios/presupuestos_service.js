@@ -4,7 +4,6 @@ const Presupuesto = require('../model/presupuesto.js');
 
 exports.getAllPresupuestos = async (req) => {
     const result = await Presupuesto.find({});
-    console.log(result);
     return result
     }
 

@@ -17,19 +17,17 @@ exports.getAllPresupuesto = async (req, res) => {
 
 function getLosMaterialesConProveedores(presupuestos){
     let materialesDesglosados = [];
-
     presupuestos.forEach(presupuesto => {
         presupuesto.materiales.forEach(material => {
             let materialConInfoProveedor = {
                 nombre: material.nombre,
                 marca: material.marca,
-                categoria: material.categoria,
                 cantidad: material.cantidad,
                 precio: material.precio,
+                calidad: material.calidad,
                 NombreProveedor: presupuesto.NombreProveedor,
                 reputacion: presupuesto.reputacion,
                 tiempoEntrega: presupuesto.tiempoEntrega,
-                calidadMaterial: material.marca.split(" ").pop(),
                 puntaje: 0
             };
             materialesDesglosados.push(materialConInfoProveedor);
@@ -74,7 +72,7 @@ function ordenarPorTiempoEntrega(materialesPorLista){
 
 function ordenarPorCalidadMaterial(materialesPorLista){
     for( let nombreMaterial in materialesPorLista){
-        materialesPorLista[nombreMaterial].sort((a,b) => a.calidadMaterial - b.calidadMaterial)
+        materialesPorLista[nombreMaterial].sort((a,b) => a.calidad - b.calidad)
     }
 }
 
@@ -108,16 +106,29 @@ function obtenerPresupuestoFinal(materialesPorLista){
                 NombreProveedor: proveedor,
                 materiales: [],
                 precioParcial: 0,
+                tiempoEntrega: 0,
             }
         }
-        materialesPorProveedor[proveedor].materiales.push(material)
+
+        let materialReducido = {
+            nombre: material.nombre,
+            cantidad: material.cantidad,
+            precio: material.precio,
+            marca: material.marca
+        }
+
+        materialesPorProveedor[proveedor].materiales.push(materialReducido)
         materialesPorProveedor[proveedor].precioParcial += material.precio
+        materialesPorProveedor[proveedor].tiempoEntrega = material.tiempoEntrega
         precioFinal += material.precio
     })
     
-    const resultado = {
-        presupuestos: Object.values(materialesPorProveedor),
+    let resultado = {
+        presupuestos: [],
         precioFinal: precioFinal
+    }
+    for( let clave in materialesPorProveedor ){
+        resultado.presupuestos.push(materialesPorProveedor[clave])
     }
 
     return resultado
@@ -151,6 +162,6 @@ exports.comparePresupuestos = async (req, res) => {
     ordenarPorPuntaje(materialesPorLista)
     const presupuestoFinal = obtenerPresupuestoFinal(materialesPorLista)
 
-    console.log(presupuestoFinal);
+    res.status(200).send(presupuestoFinal)
 
 }
