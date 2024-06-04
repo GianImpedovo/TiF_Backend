@@ -7,6 +7,7 @@ const PresupuestoSchema = new Schema({
     tiempoEntrega: String,
     vencimiento: Date,
     precioTotal: Number,
+    precioEnvio: Number,
     materiales: [{
         nombre: String,
         marca: String,

@@ -28,6 +28,7 @@ function getLosMaterialesConProveedores(presupuestos){
                 NombreProveedor: presupuesto.NombreProveedor,
                 reputacion: presupuesto.reputacion,
                 tiempoEntrega: presupuesto.tiempoEntrega,
+                precioEnvio: presupuesto.precioEnvio,
                 puntaje: 0
             };
             materialesDesglosados.push(materialConInfoProveedor);
@@ -106,6 +107,7 @@ function obtenerPresupuestoFinal(materialesPorLista){
                 materiales: [],
                 precioParcial: 0,
                 tiempoEntrega: 0,
+                precioEnvio: 0
             }
         }
 
@@ -119,6 +121,7 @@ function obtenerPresupuestoFinal(materialesPorLista){
         materialesPorProveedor[proveedor].materiales.push(materialReducido)
         materialesPorProveedor[proveedor].precioParcial += material.precio
         materialesPorProveedor[proveedor].tiempoEntrega = material.tiempoEntrega
+        materialesPorProveedor[proveedor].precioEnvio = material.precioEnvio
         precioFinal += material.precio
     })
     
