@@ -48,7 +48,7 @@ function separarMatPorElListado(materialesPorProveedor, listaMateriales){
     // Agrupar los materiales por nombre
     materialesPorProveedor.forEach(material => {
         listaMateriales.forEach(materialNombre => {
-            if (material.nombre.includes(materialNombre)) { // material.nombre.includes(materialNombre) > Esta es otra posibilidad
+            if (material.nombre.includes(materialNombre)) {
                 console.log("Ingreso el material")
                 materialesAgrupados[materialNombre].push(material);
             }
@@ -135,26 +135,25 @@ function obtenerPresupuestoFinal(materialesPorLista){
 }
 
 exports.comparePresupuestos = async (req, res) => {
-    const { filter, listaMateriales } = req.body;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
+    const { menorPrecio, tiempoEntrega, calidadMateriales } = req.params;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
     // console.log(materialesPorProveedor)
     // Aca separo segun cada material del listado, un listado de 
     // los materiales ofrecidos por los proveedores
     const materialesPorLista = separarMatPorElListado(materialesPorProveedor, listaMateriales);
-    console.log(materialesPorLista)
-    if (filter.includes("menorPrecio")) {
+    if (menorPrecio) {
         // Ordeno los materiales por precio 
         ordenarPorPrecio(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
 
-    if (filter.includes("tiempoEntrega")) {
+    if (tiempoEntrega) {
         ordenarPorTiempoEntrega(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
 
-    if (filter.includes("calidadMateriales")) {
+    if (calidadMateriales) {
         ordenarPorCalidadMaterial(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
