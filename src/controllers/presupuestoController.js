@@ -135,9 +135,10 @@ function obtenerPresupuestoFinal(materialesPorLista){
 }
 
 exports.comparePresupuestos = async (req, res) => {
-    const { menorPrecio, tiempoEntrega, calidadMateriales } = req.params;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
+    const { menorPrecio, tiempoEntrega, calidadMateriales } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
+    const listaMateriales = ["Ladrillos huecos", "Cemento"]
     // console.log(materialesPorProveedor)
     // Aca separo segun cada material del listado, un listado de 
     // los materiales ofrecidos por los proveedores
