@@ -136,6 +136,7 @@ function obtenerPresupuestoFinal(materialesPorLista){
 
 exports.comparePresupuestos = async (req, res) => {
     const { menorPrecio, tiempoEntrega, calidadMateriales } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
+    const listaMateriales = ["Ladrillos huecos", "Cemento"]
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
     const listaMateriales = ["Ladrillos huecos", "Cemento"]
@@ -159,13 +160,13 @@ exports.comparePresupuestos = async (req, res) => {
         sumarPuntaje(materialesPorLista)
     }
 
+    
     ordenarPorPuntaje(materialesPorLista)
     const presupuestoFinal = obtenerPresupuestoFinal(materialesPorLista)
 
     res.status(200).send(presupuestoFinal)
 
 }
-
 
 
 // function obtenerListaMateriales(){
