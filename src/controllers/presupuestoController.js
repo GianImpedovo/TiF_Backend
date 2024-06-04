@@ -49,7 +49,6 @@ function separarMatPorElListado(materialesPorProveedor, listaMateriales){
     materialesPorProveedor.forEach(material => {
         listaMateriales.forEach(materialNombre => {
             if (material.nombre.includes(materialNombre)) {
-                console.log("Ingreso el material")
                 materialesAgrupados[materialNombre].push(material);
             }
         });
@@ -136,25 +135,27 @@ function obtenerPresupuestoFinal(materialesPorLista){
 
 exports.comparePresupuestos = async (req, res) => {
     const { menorPrecio, tiempoEntrega, calidadMateriales } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
-    const listaMateriales = ["Ladrillos huecos", "Cemento"]
+    const listaMateriales = ["Cal", "Cemento", "Ladrillos huecos", "Cerecita", "Arena", "Piedra" ]
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
-    // console.log(materialesPorProveedor)
-    // Aca separo segun cada material del listado, un listado de 
-    // los materiales ofrecidos por los proveedores
+
+    const isMenorPrecio = menorPrecio === 'true';
+    const isTiempoEntrega = tiempoEntrega === 'true';
+    const isCalidadMateriales = calidadMateriales === 'true';
+
     const materialesPorLista = separarMatPorElListado(materialesPorProveedor, listaMateriales);
-    if (menorPrecio) {
+    if (isMenorPrecio) {
         // Ordeno los materiales por precio 
         ordenarPorPrecio(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
 
-    if (tiempoEntrega) {
+    if (isTiempoEntrega) {
         ordenarPorTiempoEntrega(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
 
-    if (calidadMateriales) {
+    if (isCalidadMateriales) {
         ordenarPorCalidadMaterial(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
@@ -176,23 +177,23 @@ exports.comparePresupuestos = async (req, res) => {
 //         },
 //         {
 //             nombre: "Cemento",
-//             cantidad: 100
+//             cantidad: 6 Bolsa
 //         },
 //         {
 //             nombre: "Cal",
-//             cantidad: 250
+//             cantidad: 8 Bolsa
 //         },
 //         {
 //             nombre: "Arena",
-//             cantidad: 100
+//             cantidad: 1 Bolsa
 //         },
 //         {
-//             nombre: "Malla hierro",
-//             cantidad: 100
+//             nombre: "Piedra",
+//             cantidad: 1
 //         },
 //         {
-//             nombre: "Placa yeso",
-//             cantidad: 100
+//             nombre: "Cerecita",
+//             cantidad: 10 kg
 //         },
 //     ]
 //     return listaMateriales;
