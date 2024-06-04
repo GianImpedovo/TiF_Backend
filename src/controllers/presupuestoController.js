@@ -48,7 +48,7 @@ function separarMatPorElListado(materialesPorProveedor, listaMateriales){
     // Agrupar los materiales por nombre
     materialesPorProveedor.forEach(material => {
         listaMateriales.forEach(materialNombre => {
-            if (material.nombre.includes(materialNombre)) { // material.nombre.includes(materialNombre) > Esta es otra posibilidad
+            if (material.nombre.includes(materialNombre)) {
                 console.log("Ingreso el material")
                 materialesAgrupados[materialNombre].push(material);
             }
