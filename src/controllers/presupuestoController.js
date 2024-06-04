@@ -139,7 +139,6 @@ exports.comparePresupuestos = async (req, res) => {
     const listaMateriales = ["Ladrillos huecos", "Cemento"]
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
-    const listaMateriales = ["Ladrillos huecos", "Cemento"]
     // console.log(materialesPorProveedor)
     // Aca separo segun cada material del listado, un listado de 
     // los materiales ofrecidos por los proveedores
