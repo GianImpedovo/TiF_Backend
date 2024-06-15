@@ -1,7 +1,4 @@
-
-
-const Presupuesto =require('../servicios/presupuestos_service.js');
-
+const Presupuesto = require('../servicios/presupuestos_service.js');
 
 exports.getAllPresupuesto = async (req, res) => {
     // devolver ccaso positivo y si no un exception con su respectiva respuesta http
@@ -12,7 +9,6 @@ exports.getAllPresupuesto = async (req, res) => {
     } catch (error) {
         res.status(500).send(error.message);
     }
-
 }
 
 function getLosMaterialesConProveedores(presupuestos){

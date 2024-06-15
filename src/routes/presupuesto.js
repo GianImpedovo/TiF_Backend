@@ -1,5 +1,5 @@
 const express = require('express');
-const presupuestoController = require('../controllers/presupuestoController.js')
+const presupuestoController = require('../controllers/presupuesto.js')
 
 
 const router = express.Router();
