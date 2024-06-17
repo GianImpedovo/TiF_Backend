@@ -16,3 +16,19 @@ exports.obtenerInformacionProveedor = async (cuit) => {
     return result[0]
 }
 
+exports.agregarListadoPendiente = async (idListado, cuit) => {
+    const result = await Proveedores.updateOne( {cuit: cuit},
+        {
+            $push: {
+                listadoPendiente: idListado 
+            }
+        }
+    )
+
+    return result.modifiedCount
+}
+
+exports.obtenerListadoPendiente = async (cuit) => {
+    const result =  await Proveedores.find({'cuit': cuit}, {'listadoPendiente': 1, '_id': 0})
+    return result[0];
+}

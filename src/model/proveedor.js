@@ -1,3 +1,4 @@
+const { UUID } = require('mongodb');
 let mongoose = require('mongoose')
 let Schema = mongoose.Schema;
 
@@ -13,7 +14,8 @@ const ProveedorSchema = new Schema({
         stock: Number,
         precio: Number,
         calidad: Number,
-    }]
+    }],
+    listadoPendiente: [String]
 });
 
 const Proveedor = mongoose.model('proveedores', ProveedorSchema)

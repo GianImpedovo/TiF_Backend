@@ -1,6 +1,7 @@
 const { UUID } = require('mongodb');
 const ListaMateriales = require('../servicios/lista_materiales_service.js');
 const Proveedores = require('../servicios/proveedores_service.js');
+const Presupuesto = require('../servicios/presupuestos_service.js');
 
 exports.obtenerProveedor = async (req, res) => {
   const { cuit } = req.params
@@ -12,6 +13,22 @@ exports.obtenerMaterialesProveedor = async (req, res) => {
   const { cuit } = req.params
   const result = await Proveedores.obtenerMaterialesProveedor(cuit);
   res.status(200).send(result)
+}
+
+exports.obtenerListadosPendiente = async (req, res) => {
+  const { cuit } = req.params
+  const result = await Proveedores.obtenerListadoPendiente(cuit)
+  const listados = result.listadoPendiente
+  let listadosMateriales = Array()
+  let lista = Array();
+  for (let i = 0; i < listados.length; i++) {
+    lista = await ListaMateriales.obtenerListaMateriales(listados[i])
+    listadosMateriales.push({
+      idListado: listados[i],
+      materiales: lista
+    })
+  }
+  res.status(200).send(listadosMateriales)
 }
 
 exports.generarPresupuesto = async (req, res) => {
@@ -39,6 +56,7 @@ exports.generarPresupuesto = async (req, res) => {
       }
     });
   let presupuesto = {
+    listaId: listaId,
     NombreProveedor: infoProveedor.nombreProveedor,
     reputacion: infoProveedor.reputacion,
     tiempoEntrega: infoProveedor.tiempoEntrega,
@@ -47,7 +65,7 @@ exports.generarPresupuesto = async (req, res) => {
     precioEnvio: infoProveedor.precioEnvio,
     materiales: presupuestoMateriales
   }
-
-  res.status(200).send(presupuesto)
+  const idPresupuesto = await Presupuesto.guardarPresupuesto(presupuesto)
+  res.status(200).send(idPresupuesto)
 }
 

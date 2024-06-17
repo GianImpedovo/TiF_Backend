@@ -27,3 +27,9 @@ exports.getPresupuestos = async (listaMateriales) => {
     }
     return listaPresupuestos
 } 
+
+exports.guardarPresupuesto = async (presupuesto) => {
+    const nuevoPresupuesto = new Presupuesto(presupuesto)
+    const result = await nuevoPresupuesto.save()
+    return result._id
+}
