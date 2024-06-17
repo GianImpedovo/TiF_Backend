@@ -19,6 +19,8 @@ const PresupuestoSchema = new Schema({
         precio: Number,
         calidad: Number,
     }]
+}, {
+    versionKey: false
 });
 
 const Presupuesto = mongoose.model('presupuestosconfirmados', PresupuestoSchema)

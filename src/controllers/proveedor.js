@@ -66,6 +66,9 @@ exports.generarPresupuesto = async (req, res) => {
     materiales: presupuestoMateriales
   }
   const idPresupuesto = await Presupuesto.guardarPresupuesto(presupuesto)
-  res.status(200).send(idPresupuesto)
+  res.status(200).send({
+    idPresupuesto: idPresupuesto,
+    message: "Presupuesto generado correctamente."
+  })
 }
 

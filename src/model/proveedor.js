@@ -16,6 +16,8 @@ const ProveedorSchema = new Schema({
         calidad: Number,
     }],
     listadoPendiente: [String]
+}, {
+    versionKey: false
 });
 
 const Proveedor = mongoose.model('proveedores', ProveedorSchema)
