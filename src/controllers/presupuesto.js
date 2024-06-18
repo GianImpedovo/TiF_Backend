@@ -147,7 +147,8 @@ exports.comparePresupuestos = async (req, res) => {
 
     const listaMateriales = await limpiarListaMateriales(lista)
 
-    const presupuestos = await Presupuesto.getAllPresupuestos();
+    const presupuestos = await Presupuesto.getPresupuestosPorPedido(lista);  // aca lo tengo que cambiar para obtener los presupuestos del listado!!!!
+    
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
 
     const isMenorPrecio = menorPrecio === 'true';
