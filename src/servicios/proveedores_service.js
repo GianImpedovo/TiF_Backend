@@ -1,5 +1,10 @@
 const Proveedores = require('../model/proveedor.js');
 
+exports.obtenerTodosProveedores = async () => {
+    const result = await Proveedores.find({}, {_id: 0, listadoPendiente: 0})
+    return result
+}
+
 exports.obtenerProveedor = async (cuit) => {
     const result =  await Proveedores.find({'cuit': cuit})
     return result

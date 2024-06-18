@@ -31,11 +31,8 @@ exports.obtenerListadosPendiente = async (req, res) => {
   res.status(200).send(listadosMateriales)
 }
 
-exports.generarPresupuesto = async (req, res) => {
-  const { listaId, vencimiento } = req.body
-  const { cuit } = req.params
+exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
   const listaMateriales = await ListaMateriales.obtenerListaMateriales(listaId)
-
   let presupuestoMateriales = Array();
   let precioFinal = 0
   const infoProveedor = await Proveedores.obtenerInformacionProveedor(cuit)
@@ -66,9 +63,16 @@ exports.generarPresupuesto = async (req, res) => {
     materiales: presupuestoMateriales
   }
   const idPresupuesto = await Presupuesto.guardarPresupuesto(presupuesto)
+  return idPresupuesto
+}
+
+exports.generarPresupuesto = async (req, res) => {
+  const { listaId, vencimiento } = req.body
+  const { cuit } = req.params
+  const idPresupuesto =  await exports.presupuestoProveedor(cuit, listaId, vencimiento)
   res.status(200).send({
     idPresupuesto: idPresupuesto,
-    message: "Presupuesto generado correctamente."
+    message: "Presupuestos generado correctamente."
   })
 }
 

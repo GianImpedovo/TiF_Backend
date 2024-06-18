@@ -67,9 +67,9 @@ function ordenarPorTiempoEntrega(materialesPorLista){
     }
 }
 
-function ordenarPorCalidadMaterial(materialesPorLista){
+function ordenarPorReputacion(materialesPorLista){
     for( let nombreMaterial in materialesPorLista){
-        materialesPorLista[nombreMaterial].sort((a,b) => a.calidad - b.calidad)
+        materialesPorLista[nombreMaterial].sort((a,b) => a.reputacion - b.reputacion)
     }
 }
 
@@ -133,18 +133,17 @@ function obtenerPresupuestoFinal(materialesPorLista){
 }
 
 exports.comparePresupuestos = async (req, res) => {
-    const { menorPrecio, tiempoEntrega, calidadMateriales } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
+    const { menorPrecio, tiempoEntrega, reputacion } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
     const listaMateriales = ["Cal", "Cemento", "Ladrillos huecos", "Cerecita", "Arena", "Piedra" ]
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
 
     const isMenorPrecio = menorPrecio === 'true';
     const isTiempoEntrega = tiempoEntrega === 'true';
-    const isCalidadMateriales = calidadMateriales === 'true';
+    const isReputacion = reputacion === 'true';
 
     const materialesPorLista = separarMatPorElListado(materialesPorProveedor, listaMateriales);
     if (isMenorPrecio) {
-        // Ordeno los materiales por precio 
         ordenarPorPrecio(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
@@ -154,12 +153,11 @@ exports.comparePresupuestos = async (req, res) => {
         sumarPuntaje(materialesPorLista)
     }
 
-    if (isCalidadMateriales) {
-        ordenarPorCalidadMaterial(materialesPorLista)
+    if (isReputacion) {
+        ordenarPorReputacion(materialesPorLista)
         sumarPuntaje(materialesPorLista)
     }
 
-    
     ordenarPorPuntaje(materialesPorLista)
     const presupuestoFinal = obtenerPresupuestoFinal(materialesPorLista)
 
