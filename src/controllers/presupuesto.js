@@ -1,3 +1,4 @@
+const ListaMateriales = require('../servicios/lista_materiales_service.js');
 const Presupuesto = require('../servicios/presupuestos_service.js');
 
 exports.getAllPresupuesto = async (req, res) => {
@@ -132,9 +133,20 @@ function obtenerPresupuestoFinal(materialesPorLista){
     return resultado
 }
 
+async function limpiarListaMateriales(idLista){
+    const resultLista = await ListaMateriales.obtenerListaMateriales(idLista)
+    let respuesta = Array()
+    resultLista.forEach(material => {
+        respuesta.push(material.nombre)
+    })
+    return respuesta
+}
+
 exports.comparePresupuestos = async (req, res) => {
-    const { menorPrecio, tiempoEntrega, reputacion } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
-    const listaMateriales = ["Cal", "Cemento", "Ladrillos huecos", "Cerecita", "Arena", "Piedra" ]
+    const { menorPrecio, tiempoEntrega, reputacion, lista } = req.query;  // [tiempo de entrega, menor precio, menor cant proveedores, calidad materiales]
+
+    const listaMateriales = await limpiarListaMateriales(lista)
+
     const presupuestos = await Presupuesto.getAllPresupuestos();
     const materialesPorProveedor = getLosMaterialesConProveedores(presupuestos);
 

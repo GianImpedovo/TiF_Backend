@@ -70,6 +70,7 @@ exports.generarPresupuesto = async (req, res) => {
   const { listaId, vencimiento } = req.body
   const { cuit } = req.params
   const idPresupuesto =  await exports.presupuestoProveedor(cuit, listaId, vencimiento)
+  await Proveedores.eliminarDelListadoPendiente(cuit, listaId)
   res.status(200).send({
     idPresupuesto: idPresupuesto,
     message: "Presupuestos generado correctamente."

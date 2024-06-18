@@ -21,6 +21,19 @@ exports.obtenerInformacionProveedor = async (cuit) => {
     return result[0]
 }
 
+exports.eliminarDelListadoPendiente = async (idListado, cuit) => {
+    const result = await Proveedores.updateOne(
+        { cuit: cuit },
+        {
+            $pull: {
+                listadoPendiente: idListado
+            }
+        }
+    );
+
+    return result.modifiedCount;
+};
+
 exports.agregarListadoPendiente = async (idListado, cuit) => {
     const result = await Proveedores.updateOne( {cuit: cuit},
         {
