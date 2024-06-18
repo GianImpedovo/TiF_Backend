@@ -26,3 +26,8 @@ async function agregarListadoAProveedor(listaId, listaCuit){
 
     await Proveedor.agregarListadoPendiente(listaId, listaCuit[0])
 }
+
+exports.obtenerListados = async (req, res) => {
+    const listas = await listaMateriales.obtenerTodasLasListas()
+    res.status(200).send(listas)
+}

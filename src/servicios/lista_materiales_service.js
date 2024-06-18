@@ -15,3 +15,8 @@ exports.obtenerListaMateriales = async (uuid) => {
     const  result =  await ListaMateriales.find({_id: uuid})
     return result[0].materiales
 }
+
+exports.obtenerTodasLasListas = async () => {
+    const result =  await ListaMateriales.find()
+    return result
+}
