@@ -99,43 +99,51 @@ function sumarPuntaje(materialesPorLista){
 }
 
 function obtenerPresupuestoFinal(materialesPorLista){
-
     let listaMaterialesFinal = []
     let materialesPorProveedor = {}
     let precioFinal = 0
-    for( let nombreMaterial in materialesPorLista ){
-        listaMaterialesFinal.push(materialesPorLista[nombreMaterial][0])
-    }
-    listaMaterialesFinal.forEach(material => {
-        let proveedor = material.NombreProveedor;
-        if(!materialesPorProveedor[proveedor]){
-            materialesPorProveedor[proveedor] = {
-                NombreProveedor: proveedor,
-                materiales: [],
-                precioParcial: 0,
-                tiempoEntrega: 0,
-                precioEnvio: 0
-            }
-        }
-
-        let materialReducido = {
-            nombre: material.nombre,
-            cantidad: material.cantidad,
-            precio: material.precio,
-            marca: material.marca
-        }
-
-        materialesPorProveedor[proveedor].materiales.push(materialReducido)
-        materialesPorProveedor[proveedor].precioParcial += material.precio
-        materialesPorProveedor[proveedor].tiempoEntrega = material.tiempoEntrega
-        materialesPorProveedor[proveedor].precioEnvio = material.precioEnvio
-        precioFinal += material.precio
-    })
-    
     let resultado = {
         presupuestos: [],
+        materialesSinProveedor: [],
         precioFinal: precioFinal
     }
+
+    for( let nombreMaterial in materialesPorLista ){
+        if(materialesPorLista[nombreMaterial].length != 0){
+            listaMaterialesFinal.push(materialesPorLista[nombreMaterial][0])
+        } else{
+            resultado.materialesSinProveedor.push(nombreMaterial)
+        }
+    }
+
+    listaMaterialesFinal.forEach(material => {
+        if(material){
+            let proveedor = material.NombreProveedor;
+            if(!materialesPorProveedor[proveedor]){
+                materialesPorProveedor[proveedor] = {
+                    NombreProveedor: proveedor,
+                    materiales: [],
+                    precioParcial: 0,
+                    tiempoEntrega: 0,
+                    precioEnvio: 0
+                }
+            }
+    
+            let materialReducido = {
+                nombre: material.nombre,
+                cantidad: material.cantidad,
+                precio: material.precio,
+                marca: material.marca
+            }
+    
+            materialesPorProveedor[proveedor].materiales.push(materialReducido)
+            materialesPorProveedor[proveedor].precioParcial += material.precio
+            materialesPorProveedor[proveedor].tiempoEntrega = material.tiempoEntrega
+            materialesPorProveedor[proveedor].precioEnvio = material.precioEnvio
+            precioFinal += material.precio
+        }
+    })
+
     for( let clave in materialesPorProveedor ){
         resultado.presupuestos.push(materialesPorProveedor[clave])
     }
@@ -166,6 +174,7 @@ exports.comparePresupuestos = async (req, res) => {
     const isReputacion = reputacion === 'true';
 
     const materialesPorLista = separarMatPorElListado(materialesPorProveedor, listaMateriales);
+    console.log(materialesPorLista);
     if (isMenorPrecio) {
         ordenarPorPrecio(materialesPorLista)
         sumarPuntaje(materialesPorLista)
