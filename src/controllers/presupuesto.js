@@ -105,7 +105,7 @@ function obtenerPresupuestoFinal(materialesPorLista){
     let resultado = {
         presupuestos: [],
         materialesSinProveedor: [],
-        precioFinal: precioFinal
+        precioFinal: 0
     }
 
     for( let nombreMaterial in materialesPorLista ){
@@ -147,7 +147,7 @@ function obtenerPresupuestoFinal(materialesPorLista){
     for( let clave in materialesPorProveedor ){
         resultado.presupuestos.push(materialesPorProveedor[clave])
     }
-
+    resultado.precioFinal = precioFinal
     return resultado
 }
 
