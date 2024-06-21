@@ -1,4 +1,3 @@
-const { UUID } = require('mongodb');
 const ListaMateriales = require('../servicios/lista_materiales_service.js');
 const Proveedores = require('../servicios/proveedores_service.js');
 const Presupuesto = require('../servicios/presupuestos_service.js');
@@ -54,7 +53,7 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
     });
   let presupuesto = {
     listaId: listaId,
-    NombreProveedor: infoProveedor.nombreProveedor,
+    nombreProveedor: infoProveedor.nombreProveedor,
     reputacion: infoProveedor.reputacion,
     tiempoEntrega: infoProveedor.tiempoEntrega,
     vencimiento: vencimiento,

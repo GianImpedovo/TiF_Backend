@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 // EL PRESUPUSTO CORRESPONDE A UNA LISTA, Por ende tengo que agregar el id de la lista la que corresponde
 const PresupuestoSchema = new Schema({
     listaId: String,
-    NombreProveedor: String,
+    nombreProveedor: String,
     reputacion: Number,
     tiempoEntrega: String,
     vencimiento: Date,

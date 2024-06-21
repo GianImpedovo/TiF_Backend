@@ -9,11 +9,13 @@ const ProveedorSchema = new Schema({
     precioEnvio: Number,
     materiales: [{
         nombre: String,
+        descripcion: String,
         marca: String,
+        unidad: String,
+        cantidad: String,
         categoria: String,
         stock: Number,
         precio: Number,
-        calidad: Number,
     }],
     listadoPendiente: [String]
 }, {

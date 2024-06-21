@@ -32,7 +32,7 @@ function getLosMaterialesConProveedores(presupuestos){
                 cantidad: material.cantidad,
                 precio: material.precio,
                 calidad: material.calidad,
-                NombreProveedor: presupuesto.NombreProveedor,
+                nombreProveedor: presupuesto.nombreProveedor,
                 reputacion: presupuesto.reputacion,
                 tiempoEntrega: presupuesto.tiempoEntrega,
                 precioEnvio: presupuesto.precioEnvio,
@@ -118,10 +118,10 @@ function obtenerPresupuestoFinal(materialesPorLista){
 
     listaMaterialesFinal.forEach(material => {
         if(material){
-            let proveedor = material.NombreProveedor;
+            let proveedor = material.nombreProveedor;
             if(!materialesPorProveedor[proveedor]){
                 materialesPorProveedor[proveedor] = {
-                    NombreProveedor: proveedor,
+                    nombreProveedor: proveedor,
                     materiales: [],
                     precioParcial: 0,
                     tiempoEntrega: 0,
