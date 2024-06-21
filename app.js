@@ -9,10 +9,12 @@ app.use(express.json())
 const presupuestoRouter = require('./src/routes/presupuesto.js')
 const proveedorRouter = require('./src/routes/proveedor.js')
 const listaRouter = require('./src/routes/lista_materiales.js')
+const materialesRouter = require('./src/routes/material.js')
 // apli
 app.use("/presupuestos",presupuestoRouter)
 app.use("/proveedores", proveedorRouter)
 app.use("/lista", listaRouter)
+app.use("/materiales", materialesRouter)
 app.use("/",router.get('/', (req, res,next) => {
     res.send('Bienvenido a la página de inicio');
   }))

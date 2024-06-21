@@ -13,9 +13,11 @@ const PresupuestoSchema = new Schema({
     precioEnvio: Number,
     materiales: [{
         nombre: String,
+        descripcion: String,
         marca: String,
         categoria: String,
         cantidad: Number,
+        unidad: String,
         precio: Number,
         calidad: Number,
     }]

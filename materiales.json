@@ -1,0 +1,314 @@
+[
+    {
+        "nombre": "Arena",
+        "descripcion": "Bolson de Arena Fina",
+        "marca": "Blinki",
+        "unidad": "Bolson",
+        "cantidad": "1200kg",
+        "categoria": "Aridos, Arena y Piedra"
+    },
+    {
+        "nombre": "Arena",
+        "descripcion": "Bolson de Arena Fina",
+        "marca": "Trudy",
+        "unidad": "Bolson",
+        "cantidad": "1200kg",
+        "categoria": "Aridos, Arena y Piedra"
+    },
+    {
+        "nombre": "Arena",
+        "descripcion": "Bolson de Arena Fina",
+        "marca": "",
+        "unidad": "Bolson",
+        "cantidad": "1200kg",
+        "categoria": "Aridos, Arena y Piedra"
+    },
+    {
+        "nombre": "Piedra",
+        "descripcion": "Bolson de Piedra partida",
+        "marca": "Yaravi",
+        "unidad": "Bolson",
+        "cantidad": "1300kg",
+        "categoria": "Aridos, Arena y Piedra"
+    },
+    {
+        "nombre": "Piedra",
+        "descripcion": "Bolson de Piedra",
+        "marca": "Blinki",
+        "unidad": "Bolson",
+        "cantidad": "1000kg",
+        "categoria": "Aridos, Arena y Piedra"
+    },
+    {
+        "nombre": "Piedra",
+        "descripcion": "Bolson de Piedra",
+        "marca": "",
+        "unidad": "Bolson",
+        "cantidad": "1000kg",
+        "categoria": "Aridos, Arena y Piedra"
+    },
+    {
+        "nombre": "Cemento",
+        "descripcion": "Cemento de uso general para morteros y hormigones",
+        "marca": "Loma Negra",
+        "unidad": "Bolsa",
+        "cantidad": "50kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cemento",
+        "descripcion": "Cemento con alta pureza y rápida evolución resistente",
+        "marca": "Avellaneda",
+        "unidad": "Bolsa",
+        "cantidad": "50kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cemento",
+        "descripcion": "Cemento de alta calidad para construcción general",
+        "marca": "Holcim",
+        "unidad": "Bolsa",
+        "cantidad": "50kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cemento",
+        "descripcion": "Cemento albañil que reemplaza a la mezcla de cal y cemento",
+        "marca": "Plasticor",
+        "unidad": "Bolsa",
+        "cantidad": "40kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cemento Blanco",
+        "descripcion": "Cemento blanco para acabados estéticos",
+        "marca": "Maxhaus",
+        "unidad": "Bolsa",
+        "cantidad": "1kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cal",
+        "descripcion": "Cal Común en bolsa de 5 kg",
+        "marca": "Avellaneda",
+        "unidad": "Bolsa",
+        "cantidad": "5 kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cal Max",
+        "descripcion": "Bolsa de Cal Max 30 kg",
+        "marca": "Loma Negra",
+        "unidad": "Bolsa",
+        "cantidad": "30 kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cal Revoque fino",
+        "descripcion": "Revoque fino a la cal para interior 25 kg",
+        "marca": "Weber",
+        "unidad": "Bolsa",
+        "cantidad": "25 kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Cal de Blanqueo",
+        "descripcion": "Bolsa de Cal de Blanqueo 5 kg",
+        "marca": "Pilar Aquarel",
+        "unidad": "Bolsa",
+        "cantidad": "5 kg",
+        "categoria": "Cementos y Cal"
+    },
+    {
+        "nombre": "Ladrillo Hueco",
+        "descripcion": "Ladrillo hueco 8x18x33",
+        "marca": "La Pastoriza",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Ladrillos"
+    },
+    {
+        "nombre": "Ladrillo Hueco",
+        "descripcion": "Ladrillo hueco 12x18x33",
+        "marca": "La Pastoriza",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Ladrillos"
+    },
+    {
+        "nombre": "Ladrillo Común",
+        "descripcion": "Ladrillo común rojo",
+        "marca": "No especificada",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Ladrillos"
+    },
+    {
+        "nombre": "Ladrillo",
+        "descripcion": "Ladrillo Retak 12x25x60",
+        "marca": "Retak",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Ladrillos"
+    },
+    {
+        "nombre": "Ladrillo Portante",
+        "descripcion": "Ladrillo portante 18x18x33",
+        "marca": "Cormela",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Ladrillos"
+    },
+    {
+        "nombre": "Hierro de Construcción 6mm",
+        "descripcion": "Hierro redondo para construcción de 6mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hierro de Construcción 8mm",
+        "descripcion": "Hierro redondo para construcción de 8mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hierro de Construcción 10mm",
+        "descripcion": "Hierro redondo para construcción de 10mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hierro de Construcción 12mm",
+        "descripcion": "Hierro redondo para construcción de 12mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hierro de Construcción 16mm",
+        "descripcion": "Hierro redondo para construcción de 16mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hierro de Construcción 20mm",
+        "descripcion": "Hierro redondo para construcción de 20mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hierro de Construcción 22mm",
+        "descripcion": "Hierro redondo para construcción de 22mm de diámetro",
+        "marca": "Acindar",
+        "unidad": "Metro",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Malla de Hierro 15x15x5mm",
+        "descripcion": "Malla de hierro de 15x15 cm con 5 mm de espesor",
+        "marca": "Acindar",
+        "unidad": "Metro cuadrado",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Malla de Hierro 15x15x6mm",
+        "descripcion": "Malla de hierro de 15x15 cm con 6 mm de espesor",
+        "marca": "Acindar",
+        "unidad": "Metro cuadrado",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Malla de Hierro 10x10x5mm",
+        "descripcion": "Malla de hierro de 10x10 cm con 5 mm de espesor",
+        "marca": "Acindar",
+        "unidad": "Metro cuadrado",
+        "cantidad": "1",
+        "categoria": "Hierros"
+    },
+    {
+        "nombre": "Hidrófugo Líquido",
+        "descripcion": "Hidrófugo líquido para morteros, 1 kg",
+        "marca": "Sika",
+        "unidad": "Balde",
+        "cantidad": "1 kg",
+        "categoria": "Aislante Hidrófugo"
+    },
+    {
+        "nombre": "Ceresita",
+        "descripcion": "Balde de ceresita, 10 kg",
+        "marca": "Ceresita",
+        "unidad": "Balde",
+        "cantidad": "10 kg",
+        "categoria": "Aislante Hidrófugo"
+    },
+    {
+        "nombre": "Membrana en Rollo",
+        "descripcion": "Membrana en rollo con aluminio, 48 kg",
+        "marca": "Emacober",
+        "unidad": "Rollo",
+        "cantidad": "48 kg",
+        "categoria": "Aislante Hidrófugo"
+    },
+    {
+        "nombre": "Placa de Yeso",
+        "descripcion": "Placa de yeso 9.5 mm, 1.20 x 2.40 m",
+        "marca": "Maxhaus",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Construcción en Seco"
+    },
+    {
+        "nombre": "Placa de Yeso",
+        "descripcion": "Placa de yeso 12.5 mm, 1.20 x 2.40 m",
+        "marca": "Knauf",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Construcción en Seco"
+    },
+    {
+        "nombre": "Placa de Yeso",
+        "descripcion": "Placa de yeso 9.5 mm, 1.20 x 2.40 m",
+        "marca": "Knauf",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Construcción en Seco"
+    },
+    {
+        "nombre": "Placa de Yeso Agua",
+        "descripcion": "Placa de yeso 12.5 mm, 1.20 x 2.40 m",
+        "marca": "Maxhaus",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Construcción en Seco"
+    },
+    {
+        "nombre": "Montante 34 Rigidiza",
+        "descripcion": "Montante 34 mm, E0.52, 12 x 2.6 m",
+        "marca": "Barbieri",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Construcción en Seco"
+    },
+    {
+        "nombre": "Montante 69 Rigidiza",
+        "descripcion": "Montante 69 mm, E0.52, 12 x 2.6 m",
+        "marca": "Barbieri",
+        "unidad": "Unidad",
+        "cantidad": "1",
+        "categoria": "Construcción en Seco"
+    }
+]
