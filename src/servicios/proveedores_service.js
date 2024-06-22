@@ -5,6 +5,21 @@ exports.obtenerTodosProveedores = async () => {
     return result
 }
 
+exports.obtenerProveedoresPorListaCuit = async (listaCuit) => {
+    let result = Array()
+    for (let i = 0; i < listaCuit.length; i++) {
+        let p = await exports.obtenerProveedor(listaCuit[i])
+        result.push(p[0])
+    }
+    return result
+}
+
+exports.obtenerProveedoresRestantesPorListaCuit = async (listaCuit) => {
+    let todosProveedores = await exports.obtenerTodosProveedores();
+    let proveedoresRestantes = todosProveedores.filter(proveedor => !listaCuit.includes(proveedor.cuit));
+    return proveedoresRestantes;
+};
+
 exports.obtenerProveedor = async (cuit) => {
     const result =  await Proveedores.find({'cuit': cuit})
     return result
