@@ -8,5 +8,6 @@ router.post('/', listaController.agregarListado)
 router.get('/', listaController.obtenerListados)
 router.get('/proveedores', listaController.obtenerTodosProveedores)
 router.get('/recomendaciones', listaController.obtenerRecomendaciones)
+router.post('/guardarProveedores', listaController.agregarListadoAProveedor)
 
 module.exports = router;
