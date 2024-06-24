@@ -30,7 +30,7 @@ exports.obtenerListados = async (req, res) => {
 }
 
 function obtenerMaterialesPendientes(materiales, proveedoresSeleccionados){
-    console.log(proveedoresSeleccionados);
+    // console.log(proveedoresSeleccionados);
     let materialesPendientes = materiales.map(material => material.nombre);
     for (let i = 0; i < materialesPendientes.length; i++) {
         proveedoresSeleccionados.forEach( proveedor => {
@@ -46,23 +46,73 @@ function obtenerMaterialesPendientes(materiales, proveedoresSeleccionados){
     return materialesPendientes
 }
 
+function obtenerMaterialesMasBaratos(proveedores) {
+    const materialesMejorPrecio = {};
+    const materialesMejorTiempo = {};
+  
+    proveedores.forEach(proveedor => {
+      proveedor.materialesDisponibles.forEach(material => {
+        const nombre = material.nombre;
+        const tiempoEntrega = parseInt(proveedor.tiempoEntrega, 10);
+  
+        // Mejor precio
+        if (!materialesMejorPrecio[nombre] || material.precio < materialesMejorPrecio[nombre].precio) {
+          materialesMejorPrecio[nombre] = {
+            proveedor: proveedor.proveedor,
+            nombre: material.nombre,
+            marca: material.marca,
+            descripcion: material.descripcion,
+            precio: material.precio,
+            reputacion: proveedor.reputacion,
+            tiempoEntrega: tiempoEntrega,
+            precioEnvio: proveedor.precioEnvio
+          };
+        }
+  
+        // Mejor tiempo de entrega
+        if (!materialesMejorTiempo[nombre] || tiempoEntrega < materialesMejorTiempo[nombre].tiempoEntrega) {
+          materialesMejorTiempo[nombre] = {
+            proveedor: proveedor.proveedor,
+            nombre: material.nombre,
+            marca: material.marca,
+            descripcion: material.descripcion,
+            precio: material.precio,
+            reputacion: proveedor.reputacion,
+            tiempoEntrega: tiempoEntrega,
+            precioEnvio: proveedor.precioEnvio
+          };
+        }
+      });
+    });
+  
+    return {
+      mejorPrecio: Object.values(materialesMejorPrecio),
+      mejorTiempo: Object.values(materialesMejorTiempo)
+    };
+  }
+
 function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestantes){
     let proveedoresRecomendados = Array()
-        
     proveedoresRestantes.forEach(proveedor => {
         let materialesDisponibles = [];
 
         materialesPendientes.forEach(materialPendiente => {
+            let mejorOpcion = {
+                nombre: "",
+                marca: "",
+                descripcion: "", 
+                tiempoEntrega: "", 
+                precio: 99999999
+            }
             proveedor.materiales.forEach(materialProveedor => {
-                if (materialProveedor.nombre === materialPendiente && materialProveedor.stock > 0) {
-                    materialesDisponibles.push({
-                        nombre: materialProveedor.nombre,
-                        descripcion: materialProveedor.descripcion,
-                        precio: materialProveedor.precio
-                    }
-                    );
+                if (materialProveedor.nombre === materialPendiente && materialProveedor.stock > 0 && materialProveedor.precio < mejorOpcion.precio) {
+                    mejorOpcion.nombre = materialPendiente
+                    mejorOpcion.marca = materialProveedor.marca
+                    mejorOpcion.descripcion = materialProveedor.descripcion
+                    mejorOpcion.precio = materialProveedor.precio
                 }
             });
+            if(mejorOpcion.nombre !== "") materialesDisponibles.push(mejorOpcion)
         });
 
         if (materialesDisponibles.length > 0) {
@@ -76,7 +126,7 @@ function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestant
             });
         }
     });
-
+    proveedoresRecomendados = obtenerMaterialesMasBaratos(proveedoresRecomendados)
     return proveedoresRecomendados;
 }
 
@@ -92,7 +142,7 @@ exports.obtenerRecomendaciones = async (req, res) => {
     const proveedoresRestantes = await Proveedor.obtenerProveedoresRestantesPorListaCuit(listaCuitSeleccionados)
 
     // 3. Dentro de los proveedores restantes ver cual me conviene mas
-    console.log("materiales pendientes: ", materialesPendientes, "\nProve restantes", proveedoresRestantes);
+    // console.log("materiales pendientes: ", materialesPendientes, "\nProve restantes", proveedoresRestantes);
     const proveedoresRecomendados = obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestantes)
 
     res.status(200).send(proveedoresRecomendados)

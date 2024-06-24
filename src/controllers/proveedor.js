@@ -38,7 +38,10 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
   const listaMaterialesProveedor = await Proveedores.obtenerMaterialesProveedor(cuit);
   listaMateriales.forEach(material => {
     for (let i = 0; i < listaMaterialesProveedor.length; i++) {
-      if(listaMaterialesProveedor[i].nombre.includes(material.nombre) && listaMaterialesProveedor[i].stock >= material.cantidad){ // listaMaterialesProveedor[i].nombre
+      if(listaMaterialesProveedor[i].nombre.includes(material.nombre) && 
+         listaMaterialesProveedor[i].stock >= material.cantidad && 
+         listaMaterialesProveedor[i].marca === material.marca &&
+         listaMaterialesProveedor[i].cantidad === material.peso ){ // listaMaterialesProveedor[i].nombre
         let precio = material.cantidad * listaMaterialesProveedor[i].precio
         presupuestoMateriales.push({
             nombre: listaMaterialesProveedor[i].nombre, 
