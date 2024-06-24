@@ -16,13 +16,12 @@ exports.obtenerTodosProveedores = async (req, res) => {
     res.status(200).send(proveedores)
 }
 
-async function agregarListadoAProveedor(listaId, listaCuit){o
-
-    for (let i = 1; i < listaCuit.length; i++) {
-        await ProveedorController.presupuestoProveedor(listaCuit[i], listaId, null)
+exports.agregarListadoAProveedor = async (req, res) => {
+    const { listaId, proveedores } = req.body
+    for (let i = 1; i < proveedores.length; i++) {
+        await ProveedorController.presupuestoProveedor(proveedores[i], listaId, null)
     }
-
-    await Proveedor.agregarListadoPendiente(listaId, listaCuit[0])
+    await Proveedor.agregarListadoPendiente(listaId, proveedores[0])
 }
 
 exports.obtenerListados = async (req, res) => {
