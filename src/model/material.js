@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const mongoosePaginate = require('mongoose-paginate-v2');
+
 const materialSchema = new Schema({
     nombre: String,
     descripcion: String,
@@ -11,6 +13,8 @@ const materialSchema = new Schema({
 }, {
     versionKey: false
 });
+
+materialSchema.plugin(mongoosePaginate);
 
 const Material = mongoose.model('materiales', materialSchema);
 
