@@ -11,10 +11,24 @@ exports.cargarLista = async (listado) => {
     return result._id
 }
 
-exports.obtenerListaMateriales = async (uuid) => {
-    const  result =  await ListaMateriales.find({_id: uuid})
-    return result[0].materiales
+try {
+    // Convertir el string uuid a un ObjectId
+    const objectId = mongoose.Types.ObjectId(uuid);
+    
+    // Buscar en la base de datos usando el ObjectId
+    const result = await ListaMateriales.find({ _id: objectId });
+    
+    // Verificar si se encontró el documento
+    if (result.length === 0) {
+        throw new Error('No se encontró la lista de materiales');
+    }
+
+    return result[0].materiales;
+} catch (error) {
+    console.error('Error al obtener la lista de materiales:', error);
+    throw error;
 }
+
 
 exports.obtenerTodasLasListas = async () => {
     const result =  await ListaMateriales.find()
