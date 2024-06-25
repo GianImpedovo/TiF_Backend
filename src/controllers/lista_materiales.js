@@ -31,7 +31,10 @@ exports.obtenerListados = async (req, res) => {
 
 function obtenerMaterialesPendientes(materiales, proveedoresSeleccionados){
     // console.log(proveedoresSeleccionados);
-    let materialesPendientes = materiales.map(material => material.nombre);
+    // Extraer la lista de materiales del objeto materiales
+    let listaMateriales = materiales.materiales;
+
+    let materialesPendientes = listaMateriales.map(material => material.nombre);
     for (let i = 0; i < materialesPendientes.length; i++) {
         proveedoresSeleccionados.forEach( proveedor => {
             for (let j = 0; j < proveedor.materiales.length; j++) {
@@ -41,6 +44,7 @@ function obtenerMaterialesPendientes(materiales, proveedoresSeleccionados){
             }
         });
     }
+    console.log("materiales pendientes: ", materialesPendientes);
     materialesPendientes = materialesPendientes.filter(material => material !== "");
 
     return materialesPendientes
@@ -133,11 +137,11 @@ function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestant
 exports.obtenerRecomendaciones = async (req, res) => {
     const { listaId, listaCuitSeleccionados } = req.body
     const materiales = await ListaMateriales.obtenerListaMateriales(listaId)
-
+    console.log("materiales: ", materiales);
     // 1. Voy a ver cuales son los materiales que me falta conseguir un proveedor
     const proveedoresSeleccionados = await Proveedor.obtenerProveedoresPorListaCuit(listaCuitSeleccionados)
     const materialesPendientes = obtenerMaterialesPendientes(materiales, proveedoresSeleccionados)
-
+    console.log("proveedores seleccionados: ", proveedoresSeleccionados);
     // 2. Veo los proveedores que todavia No seleccione 
     const proveedoresRestantes = await Proveedor.obtenerProveedoresRestantesPorListaCuit(listaCuitSeleccionados)
 

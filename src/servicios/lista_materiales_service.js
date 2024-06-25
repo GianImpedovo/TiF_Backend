@@ -20,7 +20,7 @@ exports.obtenerListaMateriales = async (uuid) => {
         const result = await ListaMateriales.findById(uuid);
     
 
-        return result[0].materiales;
+        return result;
     } catch (error) {
         console.error('Error al obtener la lista de materiales:', error);
         throw error;
