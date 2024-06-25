@@ -1,5 +1,6 @@
 const ListaMateriales = require('../model/lista_materiales.js');
 const { v4: uuidv4 } = require('uuid');
+const mongoose = require('mongoose');
 
 
 exports.cargarLista = async (listado) => {
@@ -13,16 +14,11 @@ exports.cargarLista = async (listado) => {
 
 exports.obtenerListaMateriales = async (uuid) => {
     try {
-        // Convertir el string uuid a un ObjectId
-        const objectId = mongoose.Types.ObjectId(uuid);
+        
         
         // Buscar en la base de datos usando el ObjectId
-        const result = await ListaMateriales.find({ _id: objectId });
-        
-        // Verificar si se encontró el documento
-        if (result.length === 0) {
-            throw new Error('No se encontró la lista de materiales');
-        }
+        const result = await ListaMateriales.findById(uuid);
+    
 
         return result[0].materiales;
     } catch (error) {
