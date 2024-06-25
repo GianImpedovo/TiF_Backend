@@ -60,6 +60,30 @@ function obtenerMaterialesPendientes(materiales, proveedoresSeleccionados) {
     return materialesPendientes;
 }
 
+function agruparMaterialesPorProveedor(productos) {
+    // Objeto donde se agruparán los productos por proveedor
+let productosPorProveedor = {};
+
+// Iterar sobre cada producto y agruparlo por nombreProveedor
+for (let key in productos) {
+    let producto = productos[key];
+    let proveedor = producto.proveedor.nombreProveedor;
+
+    // Si el proveedor no existe en el diccionario, crear un arreglo vacío
+    if (!productosPorProveedor[proveedor]) {
+        productosPorProveedor[proveedor] = [];
+    }
+
+    // Agregar el producto al arreglo correspondiente al proveedor
+    productosPorProveedor[proveedor].push(producto);
+}
+// Mostrar el resultado
+console.log(productosPorProveedor);
+return productosPorProveedor; 
+
+}
+
+
 function obtenerMaterialesMasBaratos(proveedores) {
     const materialesMejorPrecio = {};
     const materialesMejorTiempo = {};
@@ -105,12 +129,16 @@ function obtenerMaterialesMasBaratos(proveedores) {
                     precioEnvio: proveedor.precioEnvio,
                 };
             }
+
+            // mejor reputacion
+            
+            
         });
     });
 
     return {
-        mejorPrecio: Object.values(materialesMejorPrecio),
-        mejorTiempo: Object.values(materialesMejorTiempo),
+        mejorPrecio: agruparMaterialesPorProveedor(materialesMejorPrecio),
+        mejorTiempo: materialesMejorTiempo,
     };
 }
 
