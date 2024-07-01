@@ -6,7 +6,11 @@ const ListaMaterialesSchema = new Schema({
     _id: String,
     materiales: [{
         nombre: String,
-        cantidad: Number
+        descripcion: String,
+        marca: String,
+        unidad: String,
+        cantidad: String,
+        categoria: String
     }]
 }, {
     versionKey: false
