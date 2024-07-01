@@ -36,13 +36,14 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
   let precioFinal = 0
   const infoProveedor = await Proveedores.obtenerInformacionProveedor(cuit)
   const listaMaterialesProveedor = await Proveedores.obtenerMaterialesProveedor(cuit);
-  // console.log(listaMateriales);
+  // console.log(listaMaterialesProveedor);
   listaMateriales.materiales.forEach(material => {
+    // console.log(material);
     for (let i = 0; i < listaMaterialesProveedor.length; i++) {
       if(listaMaterialesProveedor[i].nombre.includes(material.nombre) && 
-         listaMaterialesProveedor[i].stock >= material.cantidad && 
-         listaMaterialesProveedor[i].marca === material.marca &&
-         listaMaterialesProveedor[i].cantidad === material.peso ){ // listaMaterialesProveedor[i].nombre
+         listaMaterialesProveedor[i].stock >= parseInt(material.cantidad) && 
+         listaMaterialesProveedor[i].marca === material.marca ){ // listaMaterialesProveedor[i].nombre
+        // console.log("cumple todo")
         let precio = material.cantidad * listaMaterialesProveedor[i].precio
         presupuestoMateriales.push({
             nombre: listaMaterialesProveedor[i].nombre, 
@@ -53,8 +54,11 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
           })
         precioFinal += precio
         }
+        // console.log(presupuestoMateriales);
       }
+      
     });
+    
   let presupuesto = {
     listaId: listaId,
     nombreProveedor: infoProveedor.nombreProveedor,
