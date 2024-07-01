@@ -36,7 +36,8 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
   let precioFinal = 0
   const infoProveedor = await Proveedores.obtenerInformacionProveedor(cuit)
   const listaMaterialesProveedor = await Proveedores.obtenerMaterialesProveedor(cuit);
-  listaMateriales.forEach(material => {
+  // console.log(listaMateriales);
+  listaMateriales.materiales.forEach(material => {
     for (let i = 0; i < listaMaterialesProveedor.length; i++) {
       if(listaMaterialesProveedor[i].nombre.includes(material.nombre) && 
          listaMaterialesProveedor[i].stock >= material.cantidad && 
@@ -65,7 +66,7 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
     materiales: presupuestoMateriales
   }
   const idPresupuesto = await Presupuesto.guardarPresupuesto(presupuesto)
-  return idPresupuesto
+  return idPresupuesto 
 }
 
 exports.generarPresupuesto = async (req, res) => {

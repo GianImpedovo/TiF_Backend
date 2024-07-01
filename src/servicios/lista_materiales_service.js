@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 
 exports.cargarLista = async (listado) => {
+    console.log(listado);
     const nuevoListado = new ListaMateriales({
         _id: uuidv4(),
         materiales: listado

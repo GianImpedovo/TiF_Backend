@@ -16,16 +16,19 @@ exports.obtenerTodosProveedores = async (req, res) => {
     res.status(200).send(proveedores);
 };
 
-exports.agregarListadoAProveedor = async (req, res) => {
+exports.agregarListadoAProveedor = async (req, res) => {  // VEEEER!!!!
     const { listaId, proveedores } = req.body;
-    for (let i = 1; i < proveedores.length; i++) {
+    for (let i = 0; i < proveedores.length; i++) {
         await ProveedorController.presupuestoProveedor(
             proveedores[i],
             listaId,
-            null
         );
     }
-    await Proveedor.agregarListadoPendiente(listaId, proveedores[0]);
+
+    // const idPresupuesto = await Proveedor.agregarListadoPendiente(listaId, proveedores[0]);
+    res.status(200).send({
+        mensaje: "se generaron todos los presupuestos"
+    });
 };
 
 exports.obtenerListados = async (req, res) => {
