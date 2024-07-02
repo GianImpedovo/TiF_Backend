@@ -133,7 +133,8 @@ function obtenerPresupuestoFinal(materialesPorLista){
                 nombre: material.nombre,
                 cantidad: material.cantidad,
                 precio: material.precio,
-                marca: material.marca
+                marca: material.marca,
+                unidad: material.unidad
             }
     
             materialesPorProveedor[proveedor].materiales.push(materialReducido)

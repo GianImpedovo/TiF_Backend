@@ -49,6 +49,7 @@ exports.presupuestoProveedor = async (cuit, listaId, vencimiento) => {
             nombre: listaMaterialesProveedor[i].nombre, 
             marca: listaMaterialesProveedor[i].marca,
             categoria: listaMaterialesProveedor[i].categoria,
+            unidad: listaMaterialesProveedor[i].unidad,
             cantidad: material.cantidad,
             precio: precio
           })
