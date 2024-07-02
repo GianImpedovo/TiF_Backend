@@ -154,7 +154,7 @@ function obtenerPresupuestoFinal(materialesPorLista){
 async function limpiarListaMateriales(idLista){
     const resultLista = await ListaMateriales.obtenerListaMateriales(idLista)
     let respuesta = Array()
-    resultLista.forEach(material => {
+    resultLista.materiales.forEach(material => {
         respuesta.push(material.nombre)
     })
     return respuesta

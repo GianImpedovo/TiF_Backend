@@ -175,6 +175,16 @@
                 "precio": 29000
             },
             {
+                "nombre": "Cemento",
+                "descripcion": "Cemento de uso general para morteros y hormigones",
+                "marca": "Loma Negra",
+                "unidad": "Bolsa",
+                "cantidad": "50kg",
+                "categoria": "Cementos y Cal",
+                "stock": 50,
+                "precio": 9750
+            },
+            {
                 "nombre": "Piedra",
                 "descripcion": "Bolson de Piedra partida",
                 "marca": "Yaravi",
@@ -183,6 +193,16 @@
                 "categoria": "Aridos, Arena y Piedra",
                 "stock": 200,
                 "precio": 25100
+            },
+            {
+                "nombre": "Arena",
+                "descripcion": "Bolson de Arena Fina",
+                "marca": "Blinki",
+                "unidad": "Bolson",
+                "cantidad": "1200kg",
+                "categoria": "Aridos, Arena y Piedra",
+                "stock": 100,
+                "precio": 36000
             },
             {
                 "nombre": "Cemento",
