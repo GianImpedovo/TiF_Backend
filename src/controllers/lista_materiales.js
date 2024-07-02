@@ -55,11 +55,10 @@ function obtenerMaterialesPendientes(materiales, proveedoresSeleccionados) {
             }
         });
     }
-    console.log("materiales pendientes: ", materialesPendientes);
     materialesPendientes = materialesPendientes.filter(
         (material) => material !== ""
     );
-
+    console.log(materialesPendientes);
     return materialesPendientes;
 }
 
@@ -126,8 +125,6 @@ function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestant
 
     proveedoresRestantes.forEach((proveedor) => {
         let materialesDisponibles = [];
-        
-        
         materialesPendientes.forEach((materialPendiente) => {
             let mejorOpcion = {
                 nombre: "",
@@ -150,8 +147,7 @@ function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestant
                 }
             });
 
-            if (mejorOpcion.nombre !== "")
-                materialesDisponibles.push(mejorOpcion);
+            if (mejorOpcion.nombre !== "") materialesDisponibles.push(mejorOpcion);
         });
 
         if (materialesDisponibles.length > 0) {
@@ -163,7 +159,7 @@ function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestant
             });
         }
     });
-
+    // console.log(proveedoresRecomendados[2].materialesDisponibles);
     proveedoresRecomendados = obtenerMaterialesMasBaratos(proveedoresRecomendados);
     return proveedoresRecomendados;
 }
@@ -171,29 +167,25 @@ function obtenerProveedoresRecomendados(materialesPendientes, proveedoresRestant
 exports.obtenerRecomendaciones = async (req, res) => {
     const { listaId, listaCuitSeleccionados } = req.body;
     const materiales = await ListaMateriales.obtenerListaMateriales(listaId);
+    // console.log(materiales)
     // console.log("materiales: ", materiales);
     // 1. Voy a ver cuales son los materiales que me falta conseguir un proveedor
-    const proveedoresSeleccionados =
-        await Proveedor.obtenerProveedoresPorListaCuit(listaCuitSeleccionados);
+    const proveedoresSeleccionados = await Proveedor.obtenerProveedoresPorListaCuit(listaCuitSeleccionados);
+    
     const materialesPendientes = obtenerMaterialesPendientes(
         materiales,
         proveedoresSeleccionados
     );
     // console.log("proveedores seleccionados: ", proveedoresSeleccionados);
     // 2. Veo los proveedores que todavia No seleccione
-    const proveedoresRestantes =
-        await Proveedor.obtenerProveedoresRestantesPorListaCuit(
-            listaCuitSeleccionados
-        );
-    
-    
+    const proveedoresRestantes = await Proveedor.obtenerProveedoresRestantesPorListaCuit( listaCuitSeleccionados );
+    console.log(proveedoresRestantes.length);
     // 3. Dentro de los proveedores restantes ver cual me conviene mas
     // console.log("materiales pendientes: ", materialesPendientes, "\nProve restantes", proveedoresRestantes);
     const proveedoresRecomendados = obtenerProveedoresRecomendados(
         materialesPendientes,
         proveedoresRestantes
     );
-
 
     res.status(200).send(proveedoresRecomendados);
 };
