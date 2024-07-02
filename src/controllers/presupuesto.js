@@ -32,6 +32,7 @@ function getLosMaterialesConProveedores(presupuestos){
                 cantidad: material.cantidad,
                 precio: material.precio,
                 calidad: material.calidad,
+                unidad: material.unidad,
                 nombreProveedor: presupuesto.nombreProveedor,
                 reputacion: presupuesto.reputacion,
                 tiempoEntrega: presupuesto.tiempoEntrega,
